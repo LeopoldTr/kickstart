@@ -1,53 +1,139 @@
-# Kickstart
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LeopoldTr/kickstart/main/assets/logo.svg" alt="Kickstart" width="100" />
+</p>
 
-Opinionated project scaffolding skill for AI agents. Interactively creates typesafe web projects with modern tooling.
+<p align="center">
+  <strong>Describe it. Get a project.</strong><br/>
+  AI skill that scaffolds typesafe web projects from natural language.
+</p>
+
+<p align="center">
+  <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-8B5CF6?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkw0IDdWMTdMMTIgMjJMMjAgMTdWN0wxMiAyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="Agent Skills" /></a>
+  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white" alt="TypeScript" /></a>
+  <a href="https://bun.sh/"><img src="https://img.shields.io/badge/Bun-runtime-f9f1e1?logo=bun&logoColor=black" alt="Bun" /></a>
+  <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/Biome-lint+format-60A5FA?logo=biome&logoColor=white" alt="Biome" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" /></a>
+</p>
+
+---
 
 ## Install
 
 ```bash
-npx skills add leopoldtr/kickstart
+npx skills add LeopoldTr/kickstart
 ```
 
-## What it does
+Works with **Claude Code**, **Cursor**, **Codex**, and any [Agent Skills](https://agentskills.io)-compatible agent.
 
-Describe what you want to build in natural language. The skill infers the best stack, proposes it for confirmation, researches latest lib versions via [Context7](https://context7.com), then generates all project files directly.
+---
 
-## Supported Frameworks
+## How it works
 
-| Framework | Type |
-|-----------|------|
-| **Next.js** | Fullstack (App Router, React, SSR) |
-| **NestJS** | Backend API |
-| **React** (Vite) | Frontend SPA |
-| **Vue.js** (Vite) | Frontend SPA |
+> **Describe what you want** &rarr; **Review the proposed stack** &rarr; **Get a full project generated**
+
+Tell your AI agent what you're building in plain English. Kickstart infers the best framework, proposes a stack for your confirmation, researches latest library versions via [Context7](https://context7.com), then generates every file directly — no `create-next-app`, no templates.
+
+```
+"I want a fullstack SaaS with user auth, a dashboard, and AI chat"
+
+  Framework:  Next.js (App Router)
+  ORM:        Drizzle + PostgreSQL
+  Frontend:   Tailwind v4, shadcn/ui, zustand
+  AI:         Vercel AI SDK
+  Monitoring: Sentry
+  CI/CD:      GitHub Actions
+  Docker:     Yes
+```
+
+---
+
+## Frameworks
+
+| | Framework | Type | Router |
+|---|---|---|---|
+| <img src="https://img.shields.io/badge/-Next.js-black?logo=next.js&logoColor=white&style=flat-square" /> | **Next.js** | Fullstack | App Router (React 19) |
+| <img src="https://img.shields.io/badge/-NestJS-E0234E?logo=nestjs&logoColor=white&style=flat-square" /> | **NestJS** | Backend API | Modules / Controllers |
+| <img src="https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square" /> | **React** | Frontend SPA | react-router (Vite) |
+| <img src="https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=white&style=flat-square" /> | **Vue.js** | Frontend SPA | vue-router (Vite) |
+
+---
 
 ## Stack
 
-### Core (always included)
-TypeScript (strict) · zod · neverthrow · pino · biome · bun · lefthook
+### Core — always included
 
-### Opt-in
-- **Frontend**: Tailwind CSS · shadcn/ui · Lottie · i18n · zustand/pinia
-- **ORM**: Drizzle (recommended) or TypeORM · PostgreSQL
-- **Monitoring**: Sentry
-- **CI/CD**: GitHub Actions or GitLab CI
-- **Infrastructure**: Docker (multi-stage bun image)
-- **AI**: Vercel AI SDK
+Every project starts with a typesafe, opinionated foundation:
 
-## Usage
+| | Purpose |
+|---|---|
+| **TypeScript** (strict) | `verbatimModuleSyntax`, no `any` |
+| **zod** | Runtime validation, env validation |
+| **neverthrow** | Result pattern — `ok()` / `err()` instead of throwing |
+| **pino** | Structured logging |
+| **biome** | Lint + format (replaces eslint + prettier) |
+| **bun** | Package manager, runtime, test runner |
+| **lefthook** | Pre-commit hooks |
 
-Once installed, just tell your AI agent what you want to build:
+### Opt-in — you choose
 
-> "I want to build a fullstack app with user auth, a dashboard, and AI chat"
+| Category | Options |
+|---|---|
+| **Frontend** | Tailwind CSS &middot; shadcn/ui &middot; Lottie &middot; i18n &middot; zustand / pinia |
+| **ORM** | Drizzle *(recommended)* or TypeORM &middot; PostgreSQL |
+| **Monitoring** | Sentry |
+| **CI/CD** | GitHub Actions or GitLab CI |
+| **Infrastructure** | Docker (multi-stage bun image) |
+| **AI** | Vercel AI SDK + OpenAI |
 
-The skill will:
-1. Infer the best framework and libs
-2. Propose the stack for your confirmation
-3. Research latest versions via Context7
-4. Generate all files (no `create-next-app`)
-5. Run `bun install` and verify compilation
-6. Generate a `CLAUDE.md` for future sessions
+---
+
+## What gets generated
+
+A complete, ready-to-run project with:
+
+- All source files, configs, and folder structure
+- `package.json` with correct scripts
+- Framework-specific architecture (App Router for Next.js, modules for NestJS, features for SPA)
+- Environment validation (zod schema, `.env.example`)
+- Error handling (neverthrow Result pattern, typed error classes)
+- Structured logging (pino)
+- Pre-commit hooks (lefthook + biome)
+- **`CLAUDE.md`** — so future AI sessions understand the project
+
+### Example: Next.js project
+
+```
+my-app/
+├── app/                    # App Router pages & layouts
+├── components/ui/          # shadcn/ui
+├── core/config/            # Env validation (zod)
+├── shared/errors/          # AppError, NotFoundError
+├── shared/result/          # neverthrow re-exports
+├── infra/logger/           # Pino + AsyncLocalStorage
+├── infra/storage/          # Drizzle + PostgreSQL
+├── i18n/                   # next-intl
+├── biome.json
+├── drizzle.config.ts
+├── Dockerfile
+├── .github/workflows/ci.yml
+├── CLAUDE.md
+└── ...
+```
+
+---
+
+## Context7 — always up to date
+
+Kickstart **never generates configs from memory**. Before writing any file, it uses [Context7](https://context7.com) to fetch the latest documentation for every library in the stack.
+
+This means:
+- Tailwind v4 CSS-based config, not v3's `tailwind.config.js`
+- Biome v2 schema, not v1
+- Latest Next.js conventions (`proxy.ts`, not `middleware.ts`)
+- Current zod API, drizzle syntax, sentry SDK setup
+
+---
 
 ## License
 
-MIT
+[MIT](LICENSE)
