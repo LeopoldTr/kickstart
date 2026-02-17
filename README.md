@@ -16,9 +16,11 @@
 
 <br/>
 
-<p align="center">
-  <code>npx skills add LeopoldTr/kickstart</code>
-</p>
+## Install
+
+```bash
+npx skills add LeopoldTr/kickstart
+```
 
 <br/>
 
