@@ -25,6 +25,37 @@ npx skills add LeopoldTr/kickstart
 
 Works with **Claude Code**, **Cursor**, **Codex**, and any [Agent Skills](https://agentskills.io)-compatible agent.
 
+### Prerequisites
+
+This skill requires the [Context7](https://github.com/upstash/context7) MCP server to be configured in your agent. Context7 is used to fetch the latest documentation for every library before generating any file.
+
+<details>
+<summary><strong>Claude Code setup</strong></summary>
+
+```bash
+claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
+```
+
+</details>
+
+<details>
+<summary><strong>Cursor / other agents</strong></summary>
+
+Add to your MCP config:
+
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    }
+  }
+}
+```
+
+</details>
+
 ---
 
 ## How it works
@@ -89,36 +120,80 @@ Every project starts with a typesafe, opinionated foundation:
 
 ## What gets generated
 
-A complete, ready-to-run project with:
+A complete, ready-to-run project. Not a starter template — a real architecture tailored to your choices.
 
-- All source files, configs, and folder structure
+<table>
+  <tr>
+    <td width="50%">
+
+### Every project includes
+
 - `package.json` with correct scripts
-- Framework-specific architecture (App Router for Next.js, modules for NestJS, features for SPA)
-- Environment validation (zod schema, `.env.example`)
-- Error handling (neverthrow Result pattern, typed error classes)
+- Strict TypeScript config
+- Environment validation (zod + `.env.example`)
+- Error handling (`AppError`, `NotFoundError`, `ValidationError`)
+- Result pattern (neverthrow)
 - Structured logging (pino)
 - Pre-commit hooks (lefthook + biome)
-- **`CLAUDE.md`** — so future AI sessions understand the project
+- **`CLAUDE.md`** for future AI sessions
 
-### Example: Next.js project
+  </td>
+  <td width="50%">
 
-```
-my-app/
-├── app/                    # App Router pages & layouts
-├── components/ui/          # shadcn/ui
-├── core/config/            # Env validation (zod)
-├── shared/errors/          # AppError, NotFoundError
-├── shared/result/          # neverthrow re-exports
-├── infra/logger/           # Pino + AsyncLocalStorage
-├── infra/storage/          # Drizzle + PostgreSQL
-├── i18n/                   # next-intl
-├── biome.json
-├── drizzle.config.ts
-├── Dockerfile
-├── .github/workflows/ci.yml
-├── CLAUDE.md
-└── ...
-```
+### Adapts to your framework
+
+| | Architecture |
+|---|---|
+| **Next.js** | `app/` &middot; `core/` &middot; `shared/` &middot; `infra/` &middot; `i18n/` &middot; `proxy.ts` |
+| **NestJS** | `modules/` &middot; `common/` &middot; `config/` &middot; `database/` |
+| **React** | `features/` &middot; `components/` &middot; `shared/` &middot; `lib/` |
+| **Vue** | `features/` &middot; `composables/` &middot; `components/` &middot; `lib/` |
+
+  </td>
+  </tr>
+</table>
+
+### Example output
+
+> *"A fullstack app with a database, Sentry, and GitHub Actions"* &rarr; Next.js + Drizzle
+
+<table>
+  <tr>
+    <td>
+
+**Application**
+
+| Layer | Purpose |
+|---|---|
+| `app/` | Pages & layouts (App Router) |
+| `components/ui/` | shadcn/ui components |
+| `core/config/` | Env validation (zod) |
+| `shared/errors/` | Typed error classes |
+| `shared/result/` | neverthrow `ok()` / `err()` |
+| `infra/logger/` | Pino + request context |
+| `infra/storage/` | Drizzle + PostgreSQL |
+| `i18n/` | next-intl (en/fr) |
+
+  </td>
+  <td>
+
+**Tooling**
+
+| File | What |
+|---|---|
+| `biome.json` | Lint + format config |
+| `tsconfig.json` | Strict TypeScript |
+| `drizzle.config.ts` | ORM migrations |
+| `lefthook.yml` | Pre-commit hooks |
+| `Dockerfile` | Multi-stage bun build |
+| `docker-compose.yml` | App + PostgreSQL |
+| `.github/workflows/ci.yml` | Lint, test, build |
+| `.env.example` | All env vars documented |
+| `CLAUDE.md` | AI-readable project guide |
+
+  </td>
+  </tr>
+</table>
 
 ---
 
