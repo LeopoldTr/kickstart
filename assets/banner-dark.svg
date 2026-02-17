@@ -1,0 +1,82 @@
+<svg width="900" height="300" viewBox="0 0 900 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="900" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="0.5" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="boltGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="300" y1="100" x2="600" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#CBD5E1"/>
+    </linearGradient>
+    <filter id="glowBolt">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glowDot">
+      <feGaussianBlur stdDeviation="3"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="300" rx="16" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.08" stroke="#60A5FA" stroke-width="0.5">
+    <line x1="0" y1="60" x2="900" y2="60"/>
+    <line x1="0" y1="120" x2="900" y2="120"/>
+    <line x1="0" y1="180" x2="900" y2="180"/>
+    <line x1="0" y1="240" x2="900" y2="240"/>
+    <line x1="150" y1="0" x2="150" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="300"/>
+    <line x1="450" y1="0" x2="450" y2="300"/>
+    <line x1="600" y1="0" x2="600" y2="300"/>
+    <line x1="750" y1="0" x2="750" y2="300"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <g opacity="0.15">
+    <circle cx="80" cy="80" r="2" fill="#60A5FA" filter="url(#glowDot)"/>
+    <circle cx="180" cy="220" r="1.5" fill="#60A5FA" filter="url(#glowDot)"/>
+    <circle cx="720" cy="70" r="2" fill="#60A5FA" filter="url(#glowDot)"/>
+    <circle cx="820" cy="230" r="1.5" fill="#60A5FA" filter="url(#glowDot)"/>
+    <circle cx="350" cy="50" r="1" fill="#60A5FA"/>
+    <circle cx="550" cy="260" r="1" fill="#60A5FA"/>
+  </g>
+
+  <!-- Lightning bolt icon -->
+  <g transform="translate(320, 70)" filter="url(#glowBolt)">
+    <path d="M38 0L10 70H28L18 120L48 50H30L38 0Z" fill="url(#boltGrad)" opacity="0.9"/>
+  </g>
+
+  <!-- Title -->
+  <text x="390" y="145" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="64" font-weight="800" fill="url(#textGrad)" letter-spacing="-2">kickstart</text>
+
+  <!-- Tagline -->
+  <text x="390" y="185" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="18" fill="#94A3B8" letter-spacing="0.5">Describe it. Get a project.</text>
+
+  <!-- Tech pills -->
+  <g transform="translate(390, 210)">
+    <rect x="0" y="0" width="70" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="35" y="17" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Next.js</text>
+
+    <rect x="80" y="0" width="65" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="112" y="17" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">NestJS</text>
+
+    <rect x="155" y="0" width="60" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="185" y="17" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">React</text>
+
+    <rect x="225" y="0" width="58" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="254" y="17" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Vue.js</text>
+
+    <rect x="293" y="0" width="80" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="333" y="17" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">TypeScript</text>
+
+    <rect x="383" y="0" width="50" height="26" rx="13" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+    <text x="408" y="17" font-family="system-ui, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Bun</text>
+  </g>
+</svg>

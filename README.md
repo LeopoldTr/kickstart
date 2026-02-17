@@ -1,214 +1,215 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/LeopoldTr/kickstart/main/assets/logo.svg" alt="Kickstart" width="100" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LeopoldTr/kickstart/main/assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/LeopoldTr/kickstart/main/assets/banner-light.svg">
+    <img src="https://raw.githubusercontent.com/LeopoldTr/kickstart/main/assets/banner-dark.svg" alt="Kickstart" width="720" />
+  </picture>
 </p>
 
 <p align="center">
-  <strong>Describe it. Get a project.</strong><br/>
-  AI skill that scaffolds typesafe web projects from natural language.
+  <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-8B5CF6?style=for-the-badge" alt="Agent Skills" /></a>
+  &nbsp;
+  <a href="https://context7.com"><img src="https://img.shields.io/badge/Context7-powered-0EA5E9?style=for-the-badge" alt="Context7" /></a>
+  &nbsp;
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License" /></a>
 </p>
+
+<br/>
 
 <p align="center">
-  <a href="https://agentskills.io"><img src="https://img.shields.io/badge/Agent_Skills-compatible-8B5CF6?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMkw0IDdWMTdMMTIgMjJMMjAgMTdWN0wxMiAyWiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+" alt="Agent Skills" /></a>
-  <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white" alt="TypeScript" /></a>
-  <a href="https://bun.sh/"><img src="https://img.shields.io/badge/Bun-runtime-f9f1e1?logo=bun&logoColor=black" alt="Bun" /></a>
-  <a href="https://biomejs.dev/"><img src="https://img.shields.io/badge/Biome-lint+format-60A5FA?logo=biome&logoColor=white" alt="Biome" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License" /></a>
+  <code>npx skills add LeopoldTr/kickstart</code>
 </p>
 
----
+<br/>
 
-## Install
+<p align="center">
+  <img src="https://raw.githubusercontent.com/LeopoldTr/kickstart/main/assets/terminal.svg" alt="Kickstart in action" width="720" />
+</p>
 
-```bash
-npx skills add LeopoldTr/kickstart
-```
+<br/>
 
-Works with **Claude Code**, **Cursor**, **Codex**, and any [Agent Skills](https://agentskills.io)-compatible agent.
+## What is this?
 
-### Prerequisites
+An [Agent Skill](https://agentskills.io) that turns a sentence into a production-ready project. Tell your AI agent what you're building — it picks the right framework, proposes a stack, looks up the **latest docs** for every library, and generates all files from scratch.
 
-This skill requires the [Context7](https://github.com/upstash/context7) MCP server to be configured in your agent. Context7 is used to fetch the latest documentation for every library before generating any file.
+No templates. No `create-next-app`. Every config verified against current documentation via [Context7](https://context7.com).
 
-<details>
-<summary><strong>Claude Code setup</strong></summary>
-
-```bash
-claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
-```
-
-</details>
-
-<details>
-<summary><strong>Cursor / other agents</strong></summary>
-
-Add to your MCP config:
-
-```json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"]
-    }
-  }
-}
-```
-
-</details>
-
----
-
-## How it works
-
-> **Describe what you want** &rarr; **Review the proposed stack** &rarr; **Get a full project generated**
-
-Tell your AI agent what you're building in plain English. Kickstart infers the best framework, proposes a stack for your confirmation, researches latest library versions via [Context7](https://context7.com), then generates every file directly — no `create-next-app`, no templates.
-
-```
-"I want a fullstack SaaS with user auth, a dashboard, and AI chat"
-
-  Framework:  Next.js (App Router)
-  ORM:        Drizzle + PostgreSQL
-  Frontend:   Tailwind v4, shadcn/ui, zustand
-  AI:         Vercel AI SDK
-  Monitoring: Sentry
-  CI/CD:      GitHub Actions
-  Docker:     Yes
-```
+Works with **Claude Code** &middot; **Cursor** &middot; **Codex** &middot; any skills-compatible agent.
 
 ---
 
 ## Frameworks
 
-| | Framework | Type | Router |
-|---|---|---|---|
-| <img src="https://img.shields.io/badge/-Next.js-black?logo=next.js&logoColor=white&style=flat-square" /> | **Next.js** | Fullstack | App Router (React 19) |
-| <img src="https://img.shields.io/badge/-NestJS-E0234E?logo=nestjs&logoColor=white&style=flat-square" /> | **NestJS** | Backend API | Modules / Controllers |
-| <img src="https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat-square" /> | **React** | Frontend SPA | react-router (Vite) |
-| <img src="https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=white&style=flat-square" /> | **Vue.js** | Frontend SPA | vue-router (Vite) |
+<table>
+  <tr>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" /><br/>
+      <strong>Next.js</strong><br/>
+      <sub>Fullstack &middot; App Router &middot; React 19</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" /><br/>
+      <strong>NestJS</strong><br/>
+      <sub>Backend API &middot; Modules &middot; Controllers</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" /><br/>
+      <strong>React</strong><br/>
+      <sub>Frontend SPA &middot; Vite &middot; react-router</sub>
+    </td>
+    <td align="center" width="25%">
+      <img src="https://img.shields.io/badge/-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white" alt="Vue" /><br/>
+      <strong>Vue.js</strong><br/>
+      <sub>Frontend SPA &middot; Vite &middot; vue-router</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ## Stack
 
-### Core — always included
+<table>
+  <tr>
+    <td width="50%">
 
-Every project starts with a typesafe, opinionated foundation:
+### Core — every project
 
-| | Purpose |
+|   | |
 |---|---|
-| **TypeScript** (strict) | `verbatimModuleSyntax`, no `any` |
-| **zod** | Runtime validation, env validation |
-| **neverthrow** | Result pattern — `ok()` / `err()` instead of throwing |
-| **pino** | Structured logging |
-| **biome** | Lint + format (replaces eslint + prettier) |
-| **bun** | Package manager, runtime, test runner |
-| **lefthook** | Pre-commit hooks |
+| <img src="https://img.shields.io/badge/-3178C6?style=flat-square&logo=typescript&logoColor=white" /> | **TypeScript** strict, `verbatimModuleSyntax` |
+| <img src="https://img.shields.io/badge/-3E67B1?style=flat-square&logo=zod&logoColor=white" /> | **zod** validation, env schemas |
+| | **neverthrow** `ok()` / `err()` result pattern |
+| <img src="https://img.shields.io/badge/-60A5FA?style=flat-square&logo=biome&logoColor=white" /> | **biome** lint + format |
+| <img src="https://img.shields.io/badge/-f9f1e1?style=flat-square&logo=bun&logoColor=black" /> | **bun** runtime, package manager, test runner |
+| | **pino** structured logging |
+| | **lefthook** pre-commit hooks |
+
+  </td>
+  <td width="50%">
 
 ### Opt-in — you choose
 
-| Category | Options |
+|   | |
 |---|---|
-| **Frontend** | Tailwind CSS &middot; shadcn/ui &middot; Lottie &middot; i18n &middot; zustand / pinia |
-| **ORM** | Drizzle *(recommended)* or TypeORM &middot; PostgreSQL |
-| **Monitoring** | Sentry |
-| **CI/CD** | GitHub Actions or GitLab CI |
-| **Infrastructure** | Docker (multi-stage bun image) |
-| **AI** | Vercel AI SDK + OpenAI |
+| <img src="https://img.shields.io/badge/-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" /> | **Tailwind CSS** v4 |
+| <img src="https://img.shields.io/badge/-000?style=flat-square&logo=shadcnui&logoColor=white" /> | **shadcn/ui** components |
+| | **Drizzle** or **TypeORM** + PostgreSQL |
+| | **Sentry** error monitoring |
+| | **Vercel AI SDK** + OpenAI |
+| | **Lottie** animations |
+| | **i18n** (next-intl / react-i18next / vue-i18n) |
+| <img src="https://img.shields.io/badge/-2088FF?style=flat-square&logo=githubactions&logoColor=white" /> | **GitHub Actions** or **GitLab CI** |
+| <img src="https://img.shields.io/badge/-2496ED?style=flat-square&logo=docker&logoColor=white" /> | **Docker** multi-stage bun image |
+
+  </td>
+  </tr>
+</table>
 
 ---
 
 ## What gets generated
 
-A complete, ready-to-run project. Not a starter template — a real architecture tailored to your choices.
-
 <table>
   <tr>
     <td width="50%">
 
-### Every project includes
+### Architecture (adapted per framework)
 
-- `package.json` with correct scripts
-- Strict TypeScript config
-- Environment validation (zod + `.env.example`)
-- Error handling (`AppError`, `NotFoundError`, `ValidationError`)
-- Result pattern (neverthrow)
-- Structured logging (pino)
-- Pre-commit hooks (lefthook + biome)
-- **`CLAUDE.md`** for future AI sessions
+| | Next.js | NestJS | React / Vue |
+|---|---|---|---|
+| **App layer** | `app/` | `modules/` | `features/` |
+| **Components** | `components/ui/` | — | `components/ui/` |
+| **Domain** | `core/` | `modules/*/` | `features/*/` |
+| **Shared** | `shared/` | `common/` | `shared/` |
+| **Infra** | `infra/` | `database/` | `lib/` |
+| **i18n** | `i18n/` | — | `locales/` |
 
   </td>
   <td width="50%">
 
-### Adapts to your framework
+### Tooling (always generated)
 
-| | Architecture |
+| File | |
 |---|---|
-| **Next.js** | `app/` &middot; `core/` &middot; `shared/` &middot; `infra/` &middot; `i18n/` &middot; `proxy.ts` |
-| **NestJS** | `modules/` &middot; `common/` &middot; `config/` &middot; `database/` |
-| **React** | `features/` &middot; `components/` &middot; `shared/` &middot; `lib/` |
-| **Vue** | `features/` &middot; `composables/` &middot; `components/` &middot; `lib/` |
-
-  </td>
-  </tr>
-</table>
-
-### Example output
-
-> *"A fullstack app with a database, Sentry, and GitHub Actions"* &rarr; Next.js + Drizzle
-
-<table>
-  <tr>
-    <td>
-
-**Application**
-
-| Layer | Purpose |
-|---|---|
-| `app/` | Pages & layouts (App Router) |
-| `components/ui/` | shadcn/ui components |
-| `core/config/` | Env validation (zod) |
-| `shared/errors/` | Typed error classes |
-| `shared/result/` | neverthrow `ok()` / `err()` |
-| `infra/logger/` | Pino + request context |
-| `infra/storage/` | Drizzle + PostgreSQL |
-| `i18n/` | next-intl (en/fr) |
-
-  </td>
-  <td>
-
-**Tooling**
-
-| File | What |
-|---|---|
-| `biome.json` | Lint + format config |
+| `package.json` | Scripts for dev, build, lint, test, db |
 | `tsconfig.json` | Strict TypeScript |
-| `drizzle.config.ts` | ORM migrations |
+| `biome.json` | Lint + format rules |
 | `lefthook.yml` | Pre-commit hooks |
-| `Dockerfile` | Multi-stage bun build |
-| `docker-compose.yml` | App + PostgreSQL |
-| `.github/workflows/ci.yml` | Lint, test, build |
 | `.env.example` | All env vars documented |
 | `CLAUDE.md` | AI-readable project guide |
+| `Dockerfile` | Multi-stage bun build *(opt-in)* |
+| `ci.yml` | Lint, test, build pipeline *(opt-in)* |
 
   </td>
   </tr>
 </table>
 
+### Patterns in every project
+
+```typescript
+// Result pattern — no more try/catch
+import { ok, err, type Result } from "@/shared/result";
+
+function findUser(id: string): Result<User, NotFoundError> {
+  const user = db.query.users.findFirst({ where: eq(users.id, id) });
+  return user ? ok(user) : err(new NotFoundError("User", id));
+}
+```
+
+```typescript
+// Env validation — fail fast at startup
+const env = z.object({
+  DATABASE_URL: z.string().min(1),
+  OPENAI_API_KEY: z.string().min(1),
+}).parse(process.env);
+```
+
 ---
 
-## Context7 — always up to date
+## Prerequisites
 
-Kickstart **never generates configs from memory**. Before writing any file, it uses [Context7](https://context7.com) to fetch the latest documentation for every library in the stack.
+This skill uses [Context7](https://context7.com) to look up the latest docs for every library. Make sure it's configured:
 
-This means:
-- Tailwind v4 CSS-based config, not v3's `tailwind.config.js`
-- Biome v2 schema, not v1
-- Latest Next.js conventions (`proxy.ts`, not `middleware.ts`)
-- Current zod API, drizzle syntax, sentry SDK setup
+<details>
+  <summary>&nbsp;<strong>Claude Code</strong></summary>
+
+  ```bash
+  claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
+  ```
+
+</details>
+
+<details>
+  <summary>&nbsp;<strong>Cursor / other agents</strong></summary>
+
+  ```json
+  {
+    "mcpServers": {
+      "context7": {
+        "command": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"]
+      }
+    }
+  }
+  ```
+
+</details>
 
 ---
 
-## License
+## Why
 
-[MIT](LICENSE)
+| Problem | Kickstart |
+|---|---|
+| `create-next-app` gives you a blank canvas | Gives you an **architecture** |
+| Starter templates get outdated | Context7 fetches **latest docs** every time |
+| Setting up biome + lefthook + drizzle + pino takes hours | Done in **seconds** |
+| Every project starts differently | Same patterns, **every time** |
+| New team members don't know the conventions | `CLAUDE.md` **documents everything** |
+
+---
+
+<p align="center">
+  <sub>Built by <a href="https://github.com/LeopoldTr">Leopold Tripot</a> &middot; <a href="LICENSE">MIT License</a></sub>
+</p>

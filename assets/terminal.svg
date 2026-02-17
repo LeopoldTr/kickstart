@@ -1,0 +1,86 @@
+<svg width="720" height="380" viewBox="0 0 720 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="termBg" x1="0" y1="0" x2="0" y2="380">
+      <stop stop-color="#1E1E2E"/>
+      <stop offset="1" stop-color="#181825"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Window frame -->
+  <rect width="720" height="380" rx="12" fill="url(#termBg)" stroke="#313244" stroke-width="1"/>
+
+  <!-- Title bar -->
+  <rect width="720" height="36" rx="12" fill="#181825"/>
+  <rect y="24" width="720" height="12" fill="#181825"/>
+
+  <!-- Traffic lights -->
+  <circle cx="20" cy="18" r="6" fill="#F38BA8"/>
+  <circle cx="40" cy="18" r="6" fill="#F9E2AF"/>
+  <circle cx="60" cy="18" r="6" fill="#A6E3A1"/>
+
+  <!-- Title -->
+  <text x="360" y="23" font-family="SF Mono, Monaco, Consolas, monospace" font-size="12" fill="#6C7086" text-anchor="middle">kickstart</text>
+
+  <!-- Terminal content -->
+  <g font-family="SF Mono, Monaco, Consolas, monospace" font-size="13">
+
+    <!-- Prompt -->
+    <text x="20" y="64" fill="#89B4FA">$</text>
+    <text x="35" y="64" fill="#CDD6F4"> I want to build a SaaS for managing recipes with AI</text>
+
+    <!-- Blank line -->
+
+    <!-- Proposed stack -->
+    <text x="20" y="96" fill="#A6E3A1">&#x2713;</text>
+    <text x="38" y="96" fill="#CDD6F4">Proposed stack:</text>
+
+    <text x="38" y="120" fill="#6C7086">  Framework</text>
+    <text x="180" y="120" fill="#F9E2AF">Next.js</text>
+    <text x="260" y="120" fill="#6C7086">App Router + React 19</text>
+
+    <text x="38" y="140" fill="#6C7086">  ORM</text>
+    <text x="180" y="140" fill="#F9E2AF">Drizzle</text>
+    <text x="260" y="140" fill="#6C7086">+ PostgreSQL</text>
+
+    <text x="38" y="160" fill="#6C7086">  Frontend</text>
+    <text x="180" y="160" fill="#F9E2AF">Tailwind v4</text>
+    <text x="290" y="160" fill="#6C7086">shadcn/ui, zustand</text>
+
+    <text x="38" y="180" fill="#6C7086">  AI</text>
+    <text x="180" y="180" fill="#F9E2AF">Vercel AI SDK</text>
+    <text x="320" y="180" fill="#6C7086">+ OpenAI</text>
+
+    <text x="38" y="200" fill="#6C7086">  i18n</text>
+    <text x="180" y="200" fill="#F9E2AF">next-intl</text>
+    <text x="270" y="200" fill="#6C7086">en, fr</text>
+
+    <text x="38" y="220" fill="#6C7086">  Monitoring</text>
+    <text x="180" y="220" fill="#F9E2AF">Sentry</text>
+
+    <text x="38" y="240" fill="#6C7086">  CI/CD</text>
+    <text x="180" y="240" fill="#F9E2AF">GitHub Actions</text>
+
+    <text x="38" y="260" fill="#6C7086">  Docker</text>
+    <text x="180" y="260" fill="#F9E2AF">Yes</text>
+    <text x="210" y="260" fill="#6C7086">multi-stage bun</text>
+
+    <!-- Research -->
+    <text x="20" y="296" fill="#89B4FA">&#x25B6;</text>
+    <text x="38" y="296" fill="#89B4FA">Researching latest versions via Context7...</text>
+
+    <!-- Generated -->
+    <text x="20" y="324" fill="#A6E3A1">&#x2713;</text>
+    <text x="38" y="324" fill="#CDD6F4">Generated</text>
+    <text x="120" y="324" fill="#F9E2AF">42 files</text>
+    <text x="192" y="324" fill="#CDD6F4">in</text>
+    <text x="212" y="324" fill="#F9E2AF">my-recipe-saas/</text>
+
+    <text x="20" y="352" fill="#A6E3A1">&#x2713;</text>
+    <text x="38" y="352" fill="#CDD6F4">bun install</text>
+    <text x="130" y="352" fill="#A6E3A1">&#x2713;</text>
+    <text x="148" y="352" fill="#CDD6F4">tsc --noEmit</text>
+    <text x="262" y="352" fill="#A6E3A1">&#x2713;</text>
+    <text x="280" y="352" fill="#CDD6F4">CLAUDE.md</text>
+
+  </g>
+</svg>
